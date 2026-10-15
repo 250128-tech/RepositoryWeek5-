@@ -2,8 +2,9 @@
 // Created by xurshid on 10/15/26.
 //
 
-// ez2 file
-// Easy 2
+// ez3 file
+// Easy 3
+// idk where cmath came from, i really dunno. and i dunno what it does. but it works, so i left it there, dont ask me what it does. thx.
 
 #include <cmath>
 #include <iostream>
@@ -11,38 +12,25 @@ using namespace std;
 
 int main() {
 
-    // input
-    int Numb; cin >> Numb;
-
-    // declaration
-    long long sum = 0;
-
-    if ( Numb < 0 ) {
-        Numb = -1;
-        sum = -2;
+    int n; cin >> n;
+    int i = 0;
+    int counter = 0;
+    int total = 0;
+    while (i < n) {
+        i++;
+        int x; cin >> x;
+        if ( x == 1 ) {
+            counter += 1;
+        } else {
+            counter = 0;
+            continue;
+        }
+        if ( counter > total ) {
+            total = counter;
+        }
     }
 
-
-
-    int i = Numb;
-    int pow = 1;
-
-    while ( i > 0 ) {
-        i /= 10;
-        pow *= 10;
-    }
-
-    pow /= 10;
-
-    int j = Numb;
-
-    while ( j > 0 ) {
-        sum += ( j % 10 ) * pow;
-        pow /= 10;
-        j /= 10;
-    }
-
-    cout << ( sum == Numb ? "true" : "false" );
+    cout << total;
 
     return 0;
 }
