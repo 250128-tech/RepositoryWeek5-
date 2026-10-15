@@ -11,26 +11,6 @@
 using namespace std;
 
 int main() {
-
-    int n; cin >> n;
-    int i = 0;
-    int counter = 0;
-    int total = 0;
-    while (i < n) {
-        i++;
-        int x; cin >> x;
-        if ( x == 1 ) {
-            counter += 1;
-        } else {
-            counter = 0;
-            continue;
-        }
-        if ( counter > total ) {
-            total = counter;
-        }
-    }
-
-    cout << total;
-
+    
     return 0;
 }
