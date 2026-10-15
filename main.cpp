@@ -11,24 +11,55 @@
 using namespace std;
 
 int main() {
-    int Bottles, Exchange;
-    cin >> Bottles >> Exchange;
 
-    int Bin = 0;
-    int Counter = 0;
+    int counter = 0;
 
-    while ( true ) {
-        Counter += Bottles;
-        Bottles += Bin;
-        Bin = Bottles % Exchange;
-        Bottles = Bottles / Exchange;
+    int b, a , l , o , n;
+    b = 0;
+    a = 0;
+    l = 0;
+    o = 0;
+    n = 0;
 
-        if ( Bottles <= 0 && Bin + Bottles < Exchange ) {
-            break;
+    int k; cin >> k;
+    int i = 0;
+    while (i < k) {
+        char x; cin >> x;
+
+        switch ( x ) {
+            case 'b':
+                b++;
+                break;
+            case 'a':
+                a++;
+                break;
+            case 'l':
+                l++;
+                break;
+            case 'o':
+                o++;
+                break;
+            case 'n':
+                n++;
+                break;
+            default:
+                break;
         }
+        i++;
     }
 
-    cout << Counter;
+    while ( b > 0 && a > 0 && l > 1 && o > 1 && n > 0) {
+        b -= 1;
+        a -= 1;
+        l -= 2;
+        o -= 2;
+        n -= 1;
+
+        counter++;
+
+    }
+
+    cout << counter;
 
     return 0;
 }
