@@ -2,26 +2,33 @@
 // Created by xurshid on 10/15/26.
 //
 
-// main file
-// Easy 1
+// ez4 file
+// Medium 4
+// idk where cmath came from, i really dunno. and i dunno what it does. but it works, so i left it there, dont ask me what it does. thx.
 
+#include <cmath>
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n; cin >> n;
-    int numA = 0;
-    int numB = 0;
-    numA = ( n % 2 == 0 ? n - 1 : n );
-    numB = n - numA;
-    while ( numA > 0 ) {
-        cout << 'a';
-        numA -= 1;
-        while ( numB > 0 ) {
-            cout << 'b';
-            numB = 0;
+    int Bottles, Exchange;
+    cin >> Bottles >> Exchange;
+
+    int Bin = 0;
+    int Counter = 0;
+
+    while ( true ) {
+        Counter += Bottles;
+        Bottles += Bin;
+        Bin = Bottles % Exchange;
+        Bottles = Bottles / Exchange;
+
+        if ( Bottles <= 0 && Bin + Bottles < Exchange ) {
+            break;
         }
     }
+
+    cout << Counter;
 
     return 0;
 }
